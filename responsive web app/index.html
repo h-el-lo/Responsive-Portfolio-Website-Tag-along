@@ -19,9 +19,12 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
-                <i class="fas fa-bars" onclick="openmenu()"></i>
+                <div id="burger" class="burger" onclick="openmenu()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
             <div class="header-text">
                 <p>UI/UX Designer</p>
@@ -180,16 +183,14 @@
 
     <script>
 
-        var sidemeneu = document.getElementById("sidemenu");
+        const burger = document.querySelector("#burger");
+        const menu = document.querySelector("nav");
 
-        function openmenu() {
-            sidemenu.style.right = "0";
-        }
+        burger.addEventListener(onclick, function() {
+            burger.classList.toggle("active");
+            menu.classList.toggle("active");
 
-        function closemenu() {
-            sidemenu.style.right = "-200px";
-        }
-
+        })
     </script>
 </body>
 </html> 

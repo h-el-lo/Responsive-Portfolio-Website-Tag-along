@@ -34,14 +34,13 @@ nav {
 
 .logo {
     width: 140px;
-    border-radius: 5px;
 }
 
 nav ul li {
     display: inline-block;
     flex-direction: column-reverse;
-     list-style: none;
-     margin: 10px 20px;
+    list-style: none;
+    margin: 10px 20px;
 }
 
 nav ul li a {
@@ -49,6 +48,7 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     position: relative;
+
 }
 
 nav ul li a::after {
@@ -370,7 +370,8 @@ form .btn2 {
     color: #ff004f;
 }
 
-nav .fas {
+
+.burger {
     display: none;
 }
 
@@ -389,15 +390,10 @@ nav .fas {
         font-size: 30px;
     }
 
-    nav .fas {
-        display: block;
-        font-size: 25px;
-    }
-
     nav ul {
         background: #ff004f;
         position: fixed;
-        top: 0;
+        top: 50vh;
         right: 0;
         width: 200px;
         height: 100vh;
@@ -441,5 +437,23 @@ nav .fas {
 
     .contact-left, .contact-right {
         flex-basis: 100%;
+    }
+
+    .burger {
+        display: inline-block;
+        z-index: 5;
+    }
+
+    .burger .bar {
+        display: block;
+        background: #fff;
+        border-top-right-radius: 50%;
+        height: 3px;
+        width: 25px;
+        margin-top: 3px;
+    }
+
+    .burger.active {
+        background: red;
     }
 }
