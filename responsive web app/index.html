@@ -13,14 +13,14 @@
         <div class="container">
             <nav>
                 <img src="img/logo.png" alt="Company logo" class="logo">
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul>
+                    <li><a class="navlink" onclick="togglemenu()" href="#header">Home</a></li>
+                    <li><a class="navlink" onclick="togglemenu()" href="#about">About</a></li>
+                    <li><a class="navlink" onclick="togglemenu()" href="#services">Services</a></li>
+                    <li><a class="navlink" onclick="togglemenu()" href="#portfolio">Portfolio</a></li>
+                    <li><a class="navlink" onclick="togglemenu()" href="#contact">Contact</a></li>
                 </ul>
-                <div id="burger" class="burger" onclick="openmenu()">
+                <div id="burger" class="burger" onclick="togglemenu()">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -163,6 +163,9 @@
             <p>Copyright &copy; Kelvin. Made with <i class="fas fa-heart"></i> by Easy Tutorials</p>
         </div>
     </div>
+    <div class="blocker" onclick="togglemenu()">
+        <!-- This elememt serves as a blocker to the rest of the screen when the burger is clicked on. -->
+    </div>
 
     <script>
 
@@ -184,13 +187,18 @@
     <script>
 
         const burger = document.querySelector("#burger");
-        const menu = document.querySelector("nav");
+        const menu = document.querySelector("nav ul");
+        const blocker = document.querySelector(".blocker");
+        const body = document.querySelector("body");
+        var links = document.querySelectorAll(".navlink");
 
-        burger.addEventListener(onclick, function() {
+
+        function togglemenu() {
             burger.classList.toggle("active");
             menu.classList.toggle("active");
-
-        })
+            blocker.classList.toggle("active");
+            body.classList.toggle("freeze");
+        }
     </script>
 </body>
 </html> 
